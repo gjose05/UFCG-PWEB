@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercício 10</title>
+        <meta charset="UTF-8">
+        <script>
+            function inverterLista(){
+                var numeros = document.getElementById("txtNumeros").value;
+                numeros = numeros.split(",");
+                var invertido = [];
+                for (var i = numeros.length - 1; i >= 0; i--){
+                    invertido.push(parseInt(numeros[i]));
+                }
+                document.write("Lista invertida: " + invertido.join(", "));
+            }
+        </script>
+    </head>
+    <body>
+        Números: <input type="text" id="txtNumeros">
+        <input type="button" value="Inverter Lista" onclick="inverterLista()">
+    </body>
+</html>

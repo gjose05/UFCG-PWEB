@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercício 11</title>
+        <meta charset="UTF-8">
+        <script>
+            function calcularMedia(){
+                var temps = document.getElementById("txtTemps").value.split(",");
+                var soma = 0;
+                for (var i = 0; i < temps.length; i++){
+                    soma += parseFloat(temps[i]);
+                }
+                var media = soma / temps.length;
+                document.write("Média das temperaturas: " + media.toFixed(2) + " °C");
+            }
+
+            function mediaMovel(){
+                var temps = document.getElementById("txtTemps").value.split(",");
+                for (var i = 0; i <= temps.length - 3; i++){
+                    var media = (parseFloat(temps[i]) + parseFloat(temps[i+1]) + parseFloat(temps[i+2])) / 3;
+                    document.write("Dias " + (i+1) + " a " + (i+3) + ": " + media.toFixed(2) + " °C<br>");
+                }
+            }
+
+            function detectarTendencia(){
+                var temps = document.getElementById("txtTemps").value.split(",");
+                var subindo = true;
+                var descendo = true;
+                for (var i = 1; i < 7; i++){
+                    if (parseFloat(temps[i]) <= parseFloat(temps[i-1])) subindo = false;
+                    if (parseFloat(temps[i]) >= parseFloat(temps[i-1])) descendo = false;
+                }
+                if (subindo) alert("Tendência de AQUECIMENTO nos últimos 7 dias!");
+                else if (descendo) alert("Tendência de RESFRIAMENTO nos últimos 7 dias!");
+                else alert("Temperatura INSTÁVEL (sem padrão claro) nos últimos 7 dias.");
+            }
+
+            function alertaExtremo(){
+                var temps = document.getElementById("txtTemps").value.split(",");
+                var alertaCalor = false;
+                var alertaFrio = false;
+                for (var i = 0; i <= temps.length - 3; i++){
+                    if (parseFloat(temps[i]) > 35 && parseFloat(temps[i+1]) > 35 && parseFloat(temps[i+2]) > 35)
+                        alertaCalor = true;
+                    if (parseFloat(temps[i]) < 5 && parseFloat(temps[i+1]) < 5 && parseFloat(temps[i+2]) < 5)
+                        alertaFrio = true;
+                }
+                if (alertaCalor) alert("ALERTA: 3 dias consecutivos acima de 35 °C!");
+                if (alertaFrio) alert("ALERTA: 3 dias consecutivos abaixo de 5 °C!");
+                if (!alertaCalor && !alertaFrio) alert("Nenhuma temperatura extrema detectada.");
+            }
+        </script>
+    </head>
+    <body>
+        Temperaturas: <input type="text" id="txtTemps">
+        <br><br>
+        <input type="button" value="A) Média" onclick="calcularMedia()">
+        <input type="button" value="B) Média Móvel" onclick="mediaMovel()">
+        <input type="button" value="C) Tendência" onclick="detectarTendencia()">
+        <input type="button" value="D) Alerta Extremo" onclick="alertaExtremo()">
+    </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercício 08</title>
+        <meta charset="UTF-8">
+        <script>
+            function calcularFatorial(){
+                var numeros = document.getElementById("txtNumeros").value;
+                numeros = numeros.split(",");
+                for (var i = 0; i < numeros.length; i++){
+                    var n = parseInt(numeros[i]);
+                    var fat = 1;
+                    for (var j = 2; j <= n; j++){
+                        fat *= j;
+                    }
+                    document.write("Fatorial de " + n + " é " + fat + "<br>");
+                }
+            }
+        </script>
+    </head>
+    <body>
+        Números: <input type="text" id="txtNumeros">
+        <input type="button" value="Calcular Fatorial" onclick="calcularFatorial()">
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercício 09</title>
+        <meta charset="UTF-8">
+        <script>
+            function calcularEstatisticas(){
+                var numeros = document.getElementById("txtNumeros").value;
+                numeros = numeros.split(",");
+                var soma = 0;
+                var positivos = 0;
+                var negativos = 0;
+                for (var i = 0; i < numeros.length; i++){
+                    var n = parseInt(numeros[i]);
+                    soma += n;
+                    if (n >= 0) positivos++;
+                    else negativos++;
+                }
+                var media = soma / numeros.length;
+                var pctPos = (positivos / numeros.length) * 100;
+                var pctNeg = (negativos / numeros.length) * 100;
+                document.write("Média: " + media.toFixed(2) + "<br>");
+                document.write("Positivos: " + positivos + " (" + pctPos.toFixed(1) + "%)<br>");
+                document.write("Negativos: " + negativos + " (" + pctNeg.toFixed(1) + "%)");
+            }
+        </script>
+    </head>
+    <body>
+        Números: <input type="text" id="txtNumeros">
+        <input type="button" value="Calcular" onclick="calcularEstatisticas()">
+    </body>
+</html>
