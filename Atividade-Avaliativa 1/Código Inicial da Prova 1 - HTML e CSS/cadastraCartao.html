@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styleCadastraCartao.css" 
+</head>
+<body>
+    <header>
+        <h1>Prova da Loja de Informática</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index.html">Produtos</a>
+            <a href="carrinho.html">Carrinho</a>
+            <a href="#">Contato</a>
+        </nav>
+        <div class="carrinho">
+            <span id="carrinho-contagem">0</span>
+            <img src="./img/cart-icon.png" alt="Carrinho de Compras">
+        </div>
+    </header>
+    <main>
+        <div class="cadastra-cartao">
+            <form>
+                <div class="cadastra-cartao__itens">
+                    <label id="bandeira">Digite a bandeira do seu cartão:</label>
+                    <input id="bandeira" type="text">
+                </div>
+
+                <div class="cadastra-cartao__itens">
+                    <label id="nome">Digite seu nome:</label>
+                    <input id="nome" type="text">
+                </div>
+
+                <div class="cadastra-cartao__itens">
+                    <label id="numero">Digite o numero do seu cartão:</label>
+                    <input id="numero" type="number">
+                </div>
+
+                <div class="cadastra-cartao__itens">
+                    <label id="data">Digite o vencimento do seu cartão:</label>
+                    <input id="data" type="datetime">
+                </div>
+
+                <div class="cadastra-cartao__itens">
+                    <label id="verificador">Digite digito verificador do seu cartão:</label>
+                    <input id="verificador" type="password">
+                </div>
+
+                <div class="cadastra-cartao__itens">
+                    <button onclick="cadastraCartao(bandeira.value, nome.value, numero.value, data.value, verificador.value)">
+                        <a href="carrinho.html">Enviar</a>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Minha Loja de Informática - Todos os direitos reservados</p>
+    </footer>
+    <script src="./scripts/script.js"></script>
+</body>
+</html>

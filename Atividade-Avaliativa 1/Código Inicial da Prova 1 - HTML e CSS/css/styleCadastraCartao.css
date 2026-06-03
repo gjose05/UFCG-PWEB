@@ -1,0 +1,50 @@
+.cadastra-cartao{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.cadastra-cartao__itens{
+    display: flex;
+    flex-direction: column;
+}
+
+.cadastra-cartao__itens label{
+    margin-top: 2%;
+}
+
+.cadastra-cartao__itens input{
+    padding: 2%;
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin-top: 1%;
+}
+
+.cadastra-cartao__itens a{
+    color: white;
+    text-decoration: none;
+}
+
+
+button{
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 1rem;
+}
+
+button:hover{
+    background-color: #0056b3;
+}
+
+.cadastra-carta__header{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
